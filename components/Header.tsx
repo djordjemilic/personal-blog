@@ -5,7 +5,7 @@ import ProfilePicture from "../public/george-profile-photo.png";
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center space-x-2 font-bold px-10 py-5">
+    <header className="flex justify-between items-center space-x-2 font-bold px-5 py-5">
       <div className="flex items-center space-x-2">
         <Link href="/">
           <Image className="rounded-full" src={ProfilePicture} width={50} height={50} alt="logo" />

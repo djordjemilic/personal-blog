@@ -6,7 +6,7 @@ import "../../styles/globals.css";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
-      <body className="max-w-screen-xl m-auto">
+      <body className="lg:max-w-screen-xl lg:m-auto">
         {/* Header */}
         <Header />
         {/* Banner */}
