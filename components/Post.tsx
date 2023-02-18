@@ -28,6 +28,8 @@ const Post = ({ posts }: Props) => {
                     {new Date(post._createdAt).toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "long",
+                      hour: "numeric",
+                      minute: "numeric",
                       year: "numeric",
                     })}
                   </p>

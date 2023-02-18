@@ -16,7 +16,7 @@ const Header = () => {
         <Link
           href="/"
           className="px-5 py-3 text-sm md:text-base bg-gray-900 text-[#F7AB0A] flex items-center rounded-full text-center">
-          Sign up to the University of Code
+          My Portfolio
         </Link>
       </div>
     </header>
