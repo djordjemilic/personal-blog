@@ -3,6 +3,8 @@ import { groq } from "next-sanity";
 import { client } from "../../../../lib/sanity.client";
 import Image from "next/image";
 import urlFor from "../../../../lib/urlFor";
+import { PortableText } from "@portabletext/react";
+import { RichTextComponents } from "../../../../components/RichTextComponents";
 
 type Props = {
   params: {
@@ -75,6 +77,8 @@ const PostPage = async ({ params: { slug } }: Props) => {
           </section>
         </div>
       </section>
+
+      <PortableText value={post.body} components={RichTextComponents}></PortableText>
     </article>
   );
 };

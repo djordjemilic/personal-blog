@@ -10,7 +10,10 @@ const Header = () => {
         <Link href="/">
           <Image className="rounded-full" src={ProfilePicture} width={50} height={50} alt="logo" />
         </Link>
-        <h1>Đorđe</h1>
+        <div className="flex flex-col">
+          <h1>Đorđe</h1>
+          <p className="text-gray-400 max-w-sm text-sm">Frontend Developer</p>
+        </div>
       </div>
       <div>
         <Link
