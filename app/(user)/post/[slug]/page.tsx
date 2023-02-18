@@ -12,6 +12,23 @@ type Props = {
   };
 };
 
+export const revalidate = 30;
+
+export async function generateStaticParams() {
+  const query = groq`
+       *[_type=='post'] {
+            slug
+       }
+    `;
+
+  const slugs: Post[] = await client.fetch(query);
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+
+  return slugRoutes.map((slug) => ({
+    slug,
+  }));
+}
+
 const PostPage = async ({ params: { slug } }: Props) => {
   const query = groq`
         *[_type=='post' && slug.current == $slug][0] {
@@ -35,7 +52,6 @@ const PostPage = async ({ params: { slug } }: Props) => {
               fill
             />
           </div>
-
           <section className="p-5 bg-[#F7AB0A] w-full">
             <div className=" flex flex-col md:flex-row justify-between gap-y-5">
               <div>
@@ -77,7 +93,6 @@ const PostPage = async ({ params: { slug } }: Props) => {
           </section>
         </div>
       </section>
-
       <PortableText value={post.body} components={RichTextComponents}></PortableText>
     </article>
   );
